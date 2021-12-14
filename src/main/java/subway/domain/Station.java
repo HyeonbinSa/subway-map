@@ -12,4 +12,7 @@ public class Station {
     }
 
     // 추가 기능 구현
+    public void printStation(){
+        System.out.println(this.name);
+    }
 }

@@ -74,6 +74,8 @@
 4. 지하철 노선도 출력
    1. 각 호선별 노선도 출력 
 
+---
+## 📄 각 기능별 요구사항
 ### 지하철 역 관련 기능
 - 지하철 역을 등록하고 삭제할 수 있다. (단, 노선에 등록된 역은 삭제할 수 없다)
 - 중복된 지하철 역 이름이 등록될 수 없다.
@@ -113,7 +115,7 @@
 - 기대하는 출력 결과는 `[INFO]`를 붙여서 출력한다. 출력값의 형식은 예시와 동일하게 한다.
 - 에러 발생 시 `[ERROR]`를 붙여서 출력한다. (에러의 문구는 자유롭게 작성한다.)
 
-
+---
 ## 📝 License
 
 This project is [MIT](https://github.com/woowacourse/java-subway-map-precourse/blob/master/LICENSE.md) licensed.

@@ -19,4 +19,24 @@ public class LineRepository {
     public static boolean deleteLineByName(String name) {
         return lines.removeIf(line -> Objects.equals(line.getName(), name));
     }
+
+    public static void addStationInLineByName(String lineName, Station station){
+        Line line = findLineByName(lineName);
+        line.addStation(station);
+    }
+
+    public static Line findLineByName(String name){
+        for(Line line : lines()){
+            if(line.getName().equals(name)){
+                return line;
+            }
+        }
+        return null;
+    }
+
+    public static void printLine(){
+        for(Line line : lines()){
+            line.printLine();
+        }
+    }
 }
