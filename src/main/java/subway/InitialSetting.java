@@ -1,4 +1,9 @@
-package subway.domain;
+package subway;
+
+import subway.domain.Line;
+import subway.domain.LineRepository;
+import subway.domain.Station;
+import subway.domain.StationRepository;
 
 public class InitialSetting {
     private static final String GYODAE = "교대";
