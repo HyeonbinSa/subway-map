@@ -9,12 +9,13 @@ import java.util.Scanner;
 public class SubwayController {
     private Scanner scanner;
     private InputView inputView;
-    private StationController stationController = new StationController();
+    private StationController stationController;
 
     public SubwayController(Scanner scanner) {
         InitialSetting initialSetting = new InitialSetting();
         initialSetting.initSetting();
         this.scanner = scanner;
+        stationController = new StationController(scanner);
         this.inputView = new InputView(scanner);
     }
 
@@ -51,7 +52,7 @@ public class SubwayController {
     }
 
     public void runStationMenu() {
-        stationController.run(scanner);
+        stationController.run();
     }
 
     public void runLineMenu() {

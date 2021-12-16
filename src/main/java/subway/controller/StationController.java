@@ -3,6 +3,7 @@ package subway.controller;
 import subway.domain.LineRepository;
 import subway.domain.Station;
 import subway.domain.StationRepository;
+import subway.validator.StationValidator;
 import subway.view.InputView;
 import subway.view.OutputView;
 import subway.view.StationInputView;
@@ -13,20 +14,28 @@ import java.util.Scanner;
 
 public class StationController {
     private Scanner scanner;
-    private StationInputView stationInputView;
-    private StationOutputView stationOutputView;
-
-    public void run(Scanner scanner) {
+    private StationInputView stationInputView = new StationInputView();
+    private StationOutputView stationOutputView = new StationOutputView();
+    private StationValidator stationValidator = new StationValidator();
+    public  StationController(Scanner scanner){
         this.scanner = scanner;
-        stationInputView = new StationInputView();
-        stationOutputView = new StationOutputView();
-        stationInputView.printStationMenu();
-        stationInputView.printSelectMenu();
-        String menu = scanner.nextLine();
-        selectMenu(menu);
+    }
+    public void run() {
+        while(true){
+            try{
+                stationInputView.printStationMenu();
+                stationInputView.printSelectMenu();
+                String menu = scanner.nextLine();
+                selectMenu(menu);
+                break;
+            }catch(IllegalArgumentException exception){
+                System.out.println(exception);
+            }
+        }
     }
 
     public void selectMenu(String menu) {
+        stationValidator.validateSelectMenu(menu);
         if (menu.equals("1")) {
             createStation();
         }
@@ -36,14 +45,16 @@ public class StationController {
         if (menu.equals("3")) {
             getStations();
         }
-        if (menu.equals("Q")) {
-
+        if (menu.equals("B")) {
+            return;
         }
     }
 
     public void createStation() {
         stationInputView.printCreateStation();
         String stationName = scanner.nextLine();
+        stationValidator.validateLongerThanTwo(stationName);
+        stationValidator.validateDuplicateStation(stationName);
         StationRepository.addStation(new Station(stationName));
         stationOutputView.printCreateStationSuccess();
     }
@@ -51,6 +62,7 @@ public class StationController {
     public void removeStation() {
         stationInputView.printRemoveStation();
         String stationName = scanner.nextLine();
+        stationValidator.validateExistStation(stationName);
         if (StationRepository.deleteStation(stationName)) {
             stationOutputView.printDeleteStationSuccess();
         }
