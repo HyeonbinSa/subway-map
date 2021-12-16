@@ -1,11 +1,10 @@
 package subway.view;
 
-import java.util.Scanner;
-
 public class InputView {
     public void printSelectFunction() {
         System.out.println("\n## 원하는 기능을 선택하세요.");
     }
+
     public static void printMainFunction() {
         System.out.println("\n## 메인 화면");
         System.out.println("1. 역 관리");

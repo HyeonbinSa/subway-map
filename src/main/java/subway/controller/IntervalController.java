@@ -15,6 +15,7 @@ public class IntervalController {
     private IntervalInputView intervalInputView = new IntervalInputView();
     private IntervalValidator intervalValidator = new IntervalValidator();
     private IntervalOutputView intervalOutputView = new IntervalOutputView();
+
     public IntervalController(Scanner scanner) {
         this.scanner = scanner;
     }
@@ -85,7 +86,7 @@ public class IntervalController {
     }
 
     public void getInterval() {
-        for(Line line : LineRepository.lines()){
+        for (Line line : LineRepository.lines()) {
             intervalOutputView.printLineInterval(line);
         }
     }

@@ -1,11 +1,8 @@
 package subway.controller;
 
-import subway.domain.LineRepository;
 import subway.domain.Station;
 import subway.domain.StationRepository;
 import subway.validator.StationValidator;
-import subway.view.InputView;
-import subway.view.OutputView;
 import subway.view.StationInputView;
 import subway.view.StationOutputView;
 
@@ -17,18 +14,20 @@ public class StationController {
     private StationInputView stationInputView = new StationInputView();
     private StationOutputView stationOutputView = new StationOutputView();
     private StationValidator stationValidator = new StationValidator();
-    public  StationController(Scanner scanner){
+
+    public StationController(Scanner scanner) {
         this.scanner = scanner;
     }
+
     public void run() {
-        while(true){
-            try{
+        while (true) {
+            try {
                 stationInputView.printStationMenu();
                 stationInputView.printSelectMenu();
                 String menu = scanner.nextLine();
                 selectMenu(menu);
                 break;
-            }catch(IllegalArgumentException exception){
+            } catch (IllegalArgumentException exception) {
                 System.out.println(exception.getMessage());
             }
         }

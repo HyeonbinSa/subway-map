@@ -1,8 +1,5 @@
 package subway;
 
-import subway.view.InputView;
-import subway.view.OutputView;
-
 import java.util.Scanner;
 
 public class Application {

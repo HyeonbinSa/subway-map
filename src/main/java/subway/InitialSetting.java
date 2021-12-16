@@ -6,13 +6,13 @@ import subway.domain.Station;
 import subway.domain.StationRepository;
 
 public class InitialSetting {
-    private static final String GYODAE = "교대";
-    private static final String GANGNAM = "강남";
-    private static final String YEOKSAM = "역삼";
-    private static final String NAMBUTERMINAL = "남부터미널";
-    private static final String YANGJAE = "양재";
-    private static final String YANGJAEFOREST = "양재시민의숲";
-    private static final String MAEBONG = "매봉";
+    private static final String GYODAE = "교대역";
+    private static final String GANGNAM = "강남역";
+    private static final String YEOKSAM = "역삼역";
+    private static final String NAMBUTERMINAL = "남부터미널역";
+    private static final String YANGJAE = "양재역";
+    private static final String YANGJAEFOREST = "양재시민의숲역";
+    private static final String MAEBONG = "매봉역";
     private static final String LINE_TWO = "2호선";
     private static final String LINE_THREE = "3호선";
     private static final String LINE_NEW_BUNDANG = "신분당선";

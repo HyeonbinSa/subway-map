@@ -28,10 +28,4 @@ public class StationRepository {
         }
         return null;
     }
-    // 임시 - Stations 출력 확인용
-    public static void printStations(){
-        for(Station station : stations()) {
-            station.printStation();
-        }
-    }
 }

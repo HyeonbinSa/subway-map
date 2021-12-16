@@ -10,9 +10,4 @@ public class Station {
     public String getName() {
         return name;
     }
-
-    // 추가 기능 구현
-    public void printStation(){
-        System.out.println(this.name);
-    }
 }

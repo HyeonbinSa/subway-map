@@ -70,6 +70,7 @@ public class LineController {
         line.addStation(end);
         LineRepository.addLine(line);
     }
+
     public void removeLine() {
         lineInputView.printRemoveLine();
         String lineName = scanner.nextLine();

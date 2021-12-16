@@ -1,12 +1,11 @@
 package subway;
 
+import java.util.Scanner;
+
 import subway.controller.LineController;
 import subway.controller.IntervalController;
 import subway.controller.StationController;
 import subway.view.InputView;
-import subway.view.OutputView;
-
-import java.util.Scanner;
 
 public class SubwayController {
     private Scanner scanner;

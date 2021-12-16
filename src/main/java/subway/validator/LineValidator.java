@@ -38,11 +38,13 @@ public class LineValidator {
             throw new IllegalArgumentException("[ERROR] 존재하지 않는 상행 종점역입니다.");
         }
     }
+
     public void validateEndStationName(String end) {
         if (StationRepository.getStationByName(end) == null) {
             throw new IllegalArgumentException("[ERROR] 존재하지 않는 하행 종점역입니다.");
         }
     }
+
     public void validateSameStation(String start, String end) {
         if (start.equals(end)) {
             throw new IllegalArgumentException("[ERROR] 상행 종점역과 하행 종점역이 같을 수 없습니다.");

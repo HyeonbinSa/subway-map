@@ -74,8 +74,9 @@ public class IntervalValidator {
             throw new IllegalArgumentException("[ERROR] 상행 종점역보다 앞에 위치할 수 없습니다.");
         }
     }
-    public void validateMinimumTwoStation(Line line){
-        if(line.getIntervalSize() <= 2){
+
+    public void validateMinimumTwoStation(Line line) {
+        if (line.getIntervalSize() <= 2) {
             throw new IllegalArgumentException("[ERROR] 구간은 최소 2개역이 포함되어있어야합니다.");
         }
     }

@@ -37,8 +37,8 @@ public class StationValidator {
 
     public void validateEnrolledLine(String stationName) {
         Station station = StationRepository.getStationByName(stationName);
-        for(Line line : LineRepository.lines()){
-            if(line.getStations().contains(station)){
+        for (Line line : LineRepository.lines()) {
+            if (line.getStations().contains(station)) {
                 throw new IllegalArgumentException("[ERROR] 해당 역이 포함된 구간이 존재합니다.");
             }
         }
