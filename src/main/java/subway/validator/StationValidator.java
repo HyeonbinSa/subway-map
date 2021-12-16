@@ -1,5 +1,8 @@
 package subway.validator;
 
+import subway.domain.Line;
+import subway.domain.LineRepository;
+import subway.domain.Station;
 import subway.domain.StationRepository;
 
 import java.util.Arrays;
@@ -33,6 +36,11 @@ public class StationValidator {
     }
 
     public void validateEnrolledLine(String stationName) {
-        // 노선에 등록되어있는 역은 삭제 불가
+        Station station = StationRepository.getStationByName(stationName);
+        for(Line line : LineRepository.lines()){
+            if(line.getStations().contains(station)){
+                throw new IllegalArgumentException("[ERROR] 해당 역이 포함된 구간이 존재합니다.");
+            }
+        }
     }
 }

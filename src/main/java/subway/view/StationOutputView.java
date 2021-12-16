@@ -16,6 +16,6 @@ public class StationOutputView {
         for(Station station : stationList){
             System.out.println("[INFO] "+station.getName());
         }
-        System.out.println("");
+        System.out.println();
     }
 }

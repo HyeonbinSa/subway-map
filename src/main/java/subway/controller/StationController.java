@@ -29,7 +29,7 @@ public class StationController {
                 selectMenu(menu);
                 break;
             }catch(IllegalArgumentException exception){
-                System.out.println(exception);
+                System.out.println(exception.getMessage());
             }
         }
     }
@@ -63,6 +63,7 @@ public class StationController {
         stationInputView.printRemoveStation();
         String stationName = scanner.nextLine();
         stationValidator.validateExistStation(stationName);
+        stationValidator.validateEnrolledLine(stationName);
         if (StationRepository.deleteStation(stationName)) {
             stationOutputView.printDeleteStationSuccess();
         }

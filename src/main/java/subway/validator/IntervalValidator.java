@@ -79,21 +79,4 @@ public class IntervalValidator {
             throw new IllegalArgumentException("[ERROR] 구간은 최소 2개역이 포함되어있어야합니다.");
         }
     }
-//    public void validateLongerThanTwo(String lineName) {
-//        if (lineName.length() < 2) {
-//            throw new IllegalArgumentException("[ERROR] 노선 이름은 최소 2자 이상입니다.");
-//        }
-//    }
-//
-
-//    public void validateEndStationName(String end) {
-//        if (StationRepository.getStationByName(end) == null) {
-//            throw new IllegalArgumentException("[ERROR] 존재하지 않는 하행 종점역입니다.");
-//        }
-//    }
-//    public void validateSameStation(String start, String end) {
-//        if (start.equals(end)) {
-//            throw new IllegalArgumentException("[ERROR] 상행 종점역과 하행 종점역이 같을 수 없습니다.");
-//        }
-//    }
 }
