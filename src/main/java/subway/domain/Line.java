@@ -19,11 +19,7 @@ public class Line {
         stations.add(station);
     }
 
-    public void printLine() {
-        System.out.println(this.name);
-        for (Station station : stations) {
-            station.printStation();
-        }
-        System.out.println();
+    public ArrayList<Station> getStations() {
+        return stations;
     }
 }

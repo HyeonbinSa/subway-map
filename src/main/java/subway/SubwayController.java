@@ -1,5 +1,6 @@
 package subway;
 
+import subway.controller.LineController;
 import subway.controller.StationController;
 import subway.view.InputView;
 import subway.view.OutputView;
@@ -10,12 +11,14 @@ public class SubwayController {
     private Scanner scanner;
     private InputView inputView;
     private StationController stationController;
+    private LineController lineController;
 
     public SubwayController(Scanner scanner) {
         InitialSetting initialSetting = new InitialSetting();
         initialSetting.initSetting();
         this.scanner = scanner;
         stationController = new StationController(scanner);
+        lineController = new LineController(scanner);
         this.inputView = new InputView(scanner);
     }
 
@@ -56,7 +59,7 @@ public class SubwayController {
     }
 
     public void runLineMenu() {
-        OutputView.printLineMenu();
+        lineController.run();
     }
 
     public void runLineInfoMenu() {
