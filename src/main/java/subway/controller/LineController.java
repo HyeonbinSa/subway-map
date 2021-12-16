@@ -5,21 +5,13 @@ import subway.domain.LineRepository;
 import subway.domain.Station;
 import subway.domain.StationRepository;
 import subway.validator.LineValidator;
-import subway.validator.StationValidator;
 import subway.view.LineInputView;
 import subway.view.LineOutputView;
-import subway.view.StationInputView;
-import subway.view.StationOutputView;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class LineController {
-    /**
-     * 1. 노선 등록
-     * 2. 노선 삭제
-     * 3. 노선 조회
-     */
     private Scanner scanner;
     private LineInputView lineInputView = new LineInputView();
     private LineOutputView lineOutputView = new LineOutputView();
@@ -44,7 +36,7 @@ public class LineController {
     }
 
     public void selectMenu(String menu) {
-//        lineValidator.validateSelectMenu(menu);
+        lineValidator.validateSelectMenu(menu);
         if (menu.equals("1")) {
             createLine();
         }
@@ -62,10 +54,15 @@ public class LineController {
     public void createLine() {
         lineInputView.printCreateLine();
         String lineName = scanner.nextLine();
+        lineValidator.validateLongerThanTwo(lineName);
+        lineValidator.validateDuplicateLine(lineName);
         lineInputView.printInputStartStation();
         String startStation = scanner.nextLine();
+        lineValidator.validateStartStationName(startStation);
         lineInputView.printInputEndStation();
         String endStation = scanner.nextLine();
+        lineValidator.validateEndStationName(endStation);
+        lineValidator.validateSameStation(startStation, endStation);
         Station start = StationRepository.getStationByName(startStation);
         Station end = StationRepository.getStationByName(endStation);
         Line line = new Line(lineName);
@@ -73,15 +70,14 @@ public class LineController {
         line.addStation(end);
         LineRepository.addLine(line);
     }
-
     public void removeLine() {
         lineInputView.printRemoveLine();
         String lineName = scanner.nextLine();
+        lineValidator.validateExistLine(lineName);
         LineRepository.deleteLineByName(lineName);
     }
 
     public void getLines() {
-
         List<Line> lineList = LineRepository.lines();
         lineOutputView.printAllLine(lineList);
     }
