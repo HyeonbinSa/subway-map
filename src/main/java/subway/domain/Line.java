@@ -14,12 +14,23 @@ public class Line {
         return name;
     }
 
-    // 추가 기능 구현
     public void addStation(Station station) {
         stations.add(station);
     }
 
     public ArrayList<Station> getStations() {
         return stations;
+    }
+
+    public void addStationWithNumber(Station station, int number) {
+        stations.add(number - 1, station);
+    }
+
+    public void deleteStation(Station station) {
+        stations.remove(station);
+    }
+
+    public int getIntervalSize() {
+        return stations.size();
     }
 }

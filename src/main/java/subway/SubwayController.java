@@ -1,6 +1,7 @@
 package subway;
 
 import subway.controller.LineController;
+import subway.controller.IntervalController;
 import subway.controller.StationController;
 import subway.view.InputView;
 import subway.view.OutputView;
@@ -12,6 +13,7 @@ public class SubwayController {
     private InputView inputView;
     private StationController stationController;
     private LineController lineController;
+    private IntervalController intervalController;
 
     public SubwayController(Scanner scanner) {
         InitialSetting initialSetting = new InitialSetting();
@@ -19,7 +21,8 @@ public class SubwayController {
         this.scanner = scanner;
         stationController = new StationController(scanner);
         lineController = new LineController(scanner);
-        this.inputView = new InputView(scanner);
+        intervalController = new IntervalController(scanner);
+        this.inputView = new InputView();
     }
 
     public void run() {
@@ -29,8 +32,9 @@ public class SubwayController {
     public void runMainMenu() {
         boolean flag = true;
         while (flag) {
-            OutputView.printMainFunction();
-            String selectMenu = inputView.printSelectFunction();
+            inputView.printMainFunction();
+            inputView.printSelectFunction();
+            String selectMenu = scanner.nextLine();
             flag = checkMainMenuSelection(selectMenu);
         }
     }
@@ -63,10 +67,10 @@ public class SubwayController {
     }
 
     public void runLineInfoMenu() {
-        OutputView.printLineInfoMenu();
+        intervalController.run();
     }
 
     public void printLineInfo() {
-        // 4. 지하철 노선도 출력
+        intervalController.getInterval();
     }
 }

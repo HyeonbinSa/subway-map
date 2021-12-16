@@ -24,7 +24,7 @@ public class LineController {
     public void run() {
         while (true) {
             try {
-                lineInputView.printStationMenu();
+                lineInputView.printLineMenu();
                 lineInputView.printSelectMenu();
                 String menu = scanner.nextLine();
                 selectMenu(menu);

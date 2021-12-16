@@ -42,8 +42,5 @@ public class InitialSetting {
         LineRepository.addStationInLineByName(LINE_NEW_BUNDANG, StationRepository.getStationByName(GANGNAM));
         LineRepository.addStationInLineByName(LINE_NEW_BUNDANG, StationRepository.getStationByName(YANGJAE));
         LineRepository.addStationInLineByName(LINE_NEW_BUNDANG, StationRepository.getStationByName(YANGJAEFOREST));
-
-//        LineRepository.printLine();
-        StationRepository.printStations();
     }
 }

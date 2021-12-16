@@ -2,27 +2,11 @@ package subway.view;
 
 public class OutputView {
     public static void printMainFunction() {
-        System.out.println("## 메인 화면");
+        System.out.println("\n## 메인 화면");
         System.out.println("1. 역 관리");
         System.out.println("2. 노선 관리");
         System.out.println("3. 구간 관리");
         System.out.println("4. 지하철 노선도 출력");
         System.out.println("Q. 종료");
-    }
-
-    public static void printLineMenu() {
-        System.out.println("## 노선 관리 화면");
-        System.out.println("1. 노선 등록");
-        System.out.println("2. 노선 삭제");
-        System.out.println("3. 노선 조회");
-        System.out.println("4. 돌아가기");
-        System.out.println("Q. 종료");
-    }
-
-    public static void printLineInfoMenu() {
-        System.out.println("## 구간 관리 화면");
-        System.out.println("1. 구간 등록");
-        System.out.println("2. 구간 삭제");
-        System.out.println("B. 돌아가기");
     }
 }

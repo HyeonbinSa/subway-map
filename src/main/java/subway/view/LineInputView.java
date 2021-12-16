@@ -1,7 +1,7 @@
 package subway.view;
 
 public class LineInputView {
-    public void printStationMenu() {
+    public void printLineMenu() {
         System.out.println("\n## 노선 관리 화면");
         System.out.println("1. 노선 등록");
         System.out.println("2. 노선 삭제");
